@@ -6,6 +6,12 @@ import "core:slice"
 import "core:path/filepath"
 import os "core:os/os2"
 
+check_build_directory :: proc(build_path: string) {
+	if !os.exists(build_path) {
+		os.make_directory(build_path)
+	}
+}
+
 build :: proc(source_path: string, output: string, flags: string) {
 	builder: strings.Builder
 	defer strings.builder_destroy(&builder)
