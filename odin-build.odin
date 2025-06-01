@@ -3,7 +3,6 @@ package builder
 import "core:log"
 import "core:strings"
 import "core:slice"
-import "core:path/filepath"
 import os "core:os/os2"
 
 check_build_directory :: proc(build_path: string) {
